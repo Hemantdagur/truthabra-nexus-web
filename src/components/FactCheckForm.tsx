@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import LoadingSpinner from './LoadingSpinner';
+import { toast } from "@/components/ui/sonner";
 
 interface FactCheckResult {
   verdict: string;
@@ -18,15 +19,18 @@ const FactCheckForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!text.trim()) return;
+    if (!text.trim()) {
+      toast.error("Please enter some text to fact-check");
+      return;
+    }
     
     setIsLoading(true);
     setError(null);
     setResult(null);
     
     try {
-      // In a real implementation, this would be your Flask backend URL
-      const response = await fetch('https://your-truthabra-backend-url.com/check', {
+      // Using the provided ngrok endpoint
+      const response = await fetch('https://41a9-43-230-199-242.ngrok-free.app/api/check', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -35,25 +39,17 @@ const FactCheckForm: React.FC = () => {
       });
       
       if (!response.ok) {
-        throw new Error('Failed to fetch results');
+        throw new Error(`Server responded with status: ${response.status}`);
       }
       
-      // Simulated response for now
-      // In actual implementation, use: const data = await response.json();
-      setTimeout(() => {
-        // Simulate API response with example data
-        const exampleResult = {
-          verdict: Math.random() > 0.5 ? 'True' : 'False',
-          confidence: Math.random() * 100,
-          explanation: 'This is a simulated response. In a real implementation, this would be the detailed explanation from your fact-checking API.'
-        };
-        
-        setResult(exampleResult);
-        setIsLoading(false);
-      }, 1500);
-      
+      const data = await response.json();
+      setResult(data);
+      toast.success("Fact check completed!");
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Something went wrong');
+      console.error("Error during fact checking:", err);
+      setError(err instanceof Error ? err.message : 'Failed to connect to the fact-checking service. Please try again later.');
+      toast.error("Failed to complete fact check");
+    } finally {
       setIsLoading(false);
     }
   };
