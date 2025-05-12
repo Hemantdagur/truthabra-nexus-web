@@ -13,6 +13,37 @@ const Index: React.FC = () => {
       {/* 3D Background */}
       <GlobeAnimation />
       
+      {/* Animated Background Elements */}
+      <div className="fixed inset-0 z-[-1]">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ 
+            opacity: [0.1, 0.3, 0.1],
+            scale: [1, 1.2, 1]
+          }}
+          transition={{ 
+            repeat: Infinity, 
+            duration: 8,
+            ease: "easeInOut" 
+          }}
+          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-truthabra-blue/20 to-transparent blur-3xl"
+        />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ 
+            opacity: [0.1, 0.2, 0.1],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{ 
+            repeat: Infinity, 
+            duration: 12,
+            ease: "easeInOut",
+            delay: 1
+          }}
+          className="absolute bottom-1/3 right-1/4 w-72 h-72 rounded-full bg-gradient-to-r from-truthabra-purple/20 to-transparent blur-3xl"
+        />
+      </div>
+      
       {/* Navbar */}
       <Navbar />
       
@@ -48,25 +79,33 @@ const Index: React.FC = () => {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-truthabra-blue to-truthabra-purple hover:opacity-90 text-white px-8 py-6 text-lg"
+                onClick={() => document.getElementById('fact-check')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Get Started
               </Button>
             </motion.div>
             
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="mt-12 w-full max-w-2xl mx-auto animate-float"
-            >
-              <div className="glass-card p-4 rounded-lg shadow-lg">
-                <img 
-                  src="https://placehold.co/800x450/0f0e17/e2e2e2?text=Truthabra+UI+Demo" 
-                  alt="Truthabra Dashboard" 
-                  className="w-full h-auto rounded"
-                />
-              </div>
-            </motion.div>
+            {/* Animated circles */}
+            <div className="relative w-full max-w-2xl h-32 mt-16">
+              <motion.div
+                initial={{ x: -100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="absolute left-1/4 top-0 w-16 h-16 rounded-full bg-truthabra-blue/30 backdrop-blur-md border border-white/10"
+              />
+              <motion.div
+                initial={{ x: 100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="absolute right-1/4 bottom-0 w-24 h-24 rounded-full bg-truthabra-purple/30 backdrop-blur-md border border-white/10"
+              />
+              <motion.div
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 1.0 }}
+                className="absolute left-1/3 bottom-0 w-20 h-20 rounded-full bg-truthabra-cyan/30 backdrop-blur-md border border-white/10"
+              />
+            </div>
           </div>
         </div>
       </section>
