@@ -29,13 +29,13 @@ const FactCheckForm: React.FC = () => {
     setResult(null);
     
     try {
-      // Using the provided ngrok endpoint
+      // Using the provided ngrok endpoint with the correct field name 'claim'
       const response = await fetch('https://41a9-43-230-199-242.ngrok-free.app/api/check', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ text }),
+        body: JSON.stringify({ claim: text }), // Changed 'text' to 'claim'
       });
       
       if (!response.ok) {
