@@ -5,3 +5,4 @@ sentence-transformers==2.2.2
 fuzzywuzzy==0.18.0
 torch==2.1.0
 praw==7.7.0
+huggingface_hub==0.14.1
