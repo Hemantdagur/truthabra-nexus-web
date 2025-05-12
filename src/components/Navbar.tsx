@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,7 +24,7 @@ const Navbar: React.FC = () => {
           </span>
         </div>
         
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="flex items-center space-x-8">
           <a href="#home" className="text-white hover:text-truthabra-blue transition">
             Home
           </a>
@@ -36,10 +35,6 @@ const Navbar: React.FC = () => {
             How It Works
           </a>
         </div>
-        
-        <Button className="bg-gradient-to-r from-truthabra-blue to-truthabra-purple hover:opacity-90 text-white">
-          Sign Up
-        </Button>
       </div>
     </nav>
   );
