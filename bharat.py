@@ -88,6 +88,5 @@ def api_check():
         return jsonify({"error": str(e)}), 500
 
 # ==== Run the Flask App ====
-if __name__ == "__main__":
-    app.run(debug="True")
+
    
