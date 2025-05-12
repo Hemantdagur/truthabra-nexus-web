@@ -5,9 +5,9 @@ import LoadingSpinner from './LoadingSpinner';
 import { toast } from "@/components/ui/sonner";
 
 interface FactCheckResult {
-  verdict: string;
-  confidence: number;
-  explanation: string;
+  message: string;
+  similarity_score: number;
+  related_posts: string[];
 }
 
 const FactCheckForm: React.FC = () => {
@@ -35,7 +35,7 @@ const FactCheckForm: React.FC = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ claim: text }), // Changed 'text' to 'claim'
+        body: JSON.stringify({ claim: text }),
       });
       
       if (!response.ok) {
@@ -56,7 +56,7 @@ const FactCheckForm: React.FC = () => {
   
   const getVerdictClass = (verdict?: string) => {
     if (!verdict) return '';
-    return verdict.toLowerCase() === 'true' ? 'text-green-400' : 'text-red-400';
+    return verdict.toLowerCase().includes('true') ? 'text-green-400' : 'text-red-400';
   };
   
   return (
@@ -102,8 +102,8 @@ const FactCheckForm: React.FC = () => {
           <div className="p-6 glass-card rounded-lg neon-border">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-xl font-medium">Verdict:</h3>
-              <span className={`text-xl font-bold ${getVerdictClass(result.verdict)}`}>
-                {result.verdict}
+              <span className={`text-xl font-bold ${getVerdictClass(result.message)}`}>
+                {result.message}
               </span>
             </div>
             
@@ -112,20 +112,28 @@ const FactCheckForm: React.FC = () => {
               <div className="w-full h-2 bg-truthabra-muted rounded-full overflow-hidden">
                 <div 
                   className="h-full bg-gradient-to-r from-truthabra-blue to-truthabra-purple" 
-                  style={{ width: `${result.confidence}%` }}
+                  style={{ width: `${result.similarity_score}%` }}
                 />
               </div>
               <div className="flex justify-between mt-1">
                 <span className="text-xs text-white/50">0%</span>
-                <span className="text-xs font-medium text-white/80">{result.confidence.toFixed(1)}%</span>
+                <span className="text-xs font-medium text-white/80">{result.similarity_score ? result.similarity_score.toFixed(1) : 0}%</span>
                 <span className="text-xs text-white/50">100%</span>
               </div>
             </div>
             
-            <div>
-              <h4 className="text-sm text-white/70 mb-2">Explanation:</h4>
-              <p className="text-white/90">{result.explanation}</p>
-            </div>
+            {result.related_posts && result.related_posts.length > 0 && (
+              <div className="mt-6">
+                <h4 className="text-sm text-white/70 mb-2">Related Information:</h4>
+                <ul className="space-y-3">
+                  {result.related_posts.map((post, index) => (
+                    <li key={index} className="text-sm text-white/80 bg-truthabra-muted/20 p-3 rounded">
+                      {post}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         )}
       </div>
