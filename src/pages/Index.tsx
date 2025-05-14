@@ -182,7 +182,7 @@ const Index: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold mb-12 text-center"
+            className="text-4xl md:text-5xl font-bold mb-12 text-center font-['Space_Grotesk']"
           >
             <span className="text-gradient">Our</span> Team
           </motion.h2>
@@ -193,7 +193,7 @@ const Index: React.FC = () => {
               role="CEO & Co-founder"
               email="hemantdagur39@gmail.com"
               linkedin="https://linkedin.com/in/hemantsinghdagur"
-              imageUrl="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80"
+              imageUrl="/lovable-uploads/222893bc-2d31-463f-943c-1fc7ba7e5908.png"
             />
             
             <TeamMember 
@@ -201,7 +201,7 @@ const Index: React.FC = () => {
               role="CTO & Co-founder"
               email="ashmivats@gmail.com"
               linkedin="https://linkedin.com/in/ashmisingh"
-              imageUrl="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80"
+              imageUrl="/lovable-uploads/c2e38271-7b42-4282-8c6b-0c1a0dc202a4.png"
             />
             
             <TeamMember 
@@ -209,7 +209,7 @@ const Index: React.FC = () => {
               role="Head of Research"
               email="tapaprerit43@gmail.com"
               linkedin="https://linkedin.com/in/prerittapa"
-              imageUrl="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80"
+              imageUrl="/lovable-uploads/82d80edf-3e83-4779-ae6f-ddd5235f9339.png"
             />
             
             <TeamMember 
@@ -217,7 +217,7 @@ const Index: React.FC = () => {
               role="Lead Data Scientist"
               email="sarojni46k@gmail.com"
               linkedin="https://linkedin.com/in/anjalithakur"
-              imageUrl="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80"
+              imageUrl="/lovable-uploads/286a6d41-e84d-41f6-94cb-a8f42f706b87.png"
             />
           </div>
           
@@ -226,7 +226,7 @@ const Index: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: true }}
-            className="text-center text-white/60 max-w-2xl mx-auto mt-16"
+            className="text-center text-white/60 max-w-2xl mx-auto mt-16 font-['Inter']"
           >
             Our team of experts is dedicated to fighting misinformation and helping you verify facts with cutting-edge AI technology.
           </motion.p>
