@@ -34,6 +34,9 @@ const Navbar: React.FC = () => {
           <a href="#how-it-works" className="text-white hover:text-truthabra-blue transition">
             How It Works
           </a>
+          <a href="#contact-us" className="text-white hover:text-truthabra-blue transition">
+            Contact Us
+          </a>
         </div>
       </div>
     </nav>
