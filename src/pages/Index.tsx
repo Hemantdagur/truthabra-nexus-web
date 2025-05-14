@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import GlobeAnimation from '@/components/GlobeAnimation';
@@ -190,7 +189,6 @@ const Index: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             <TeamMember 
               name="Hemant Singh Dagur"
-              role="CEO & Co-founder"
               email="hemantdagur39@gmail.com"
               linkedin="https://linkedin.com/in/hemantsinghdagur"
               imageUrl="/lovable-uploads/222893bc-2d31-463f-943c-1fc7ba7e5908.png"
@@ -198,7 +196,6 @@ const Index: React.FC = () => {
             
             <TeamMember 
               name="Ashmi Singh"
-              role="CTO & Co-founder"
               email="ashmivats@gmail.com"
               linkedin="https://linkedin.com/in/ashmisingh"
               imageUrl="/lovable-uploads/c2e38271-7b42-4282-8c6b-0c1a0dc202a4.png"
@@ -206,7 +203,6 @@ const Index: React.FC = () => {
             
             <TeamMember 
               name="Prerit Tapa"
-              role="Head of Research"
               email="tapaprerit43@gmail.com"
               linkedin="https://linkedin.com/in/prerittapa"
               imageUrl="/lovable-uploads/82d80edf-3e83-4779-ae6f-ddd5235f9339.png"
@@ -214,7 +210,6 @@ const Index: React.FC = () => {
             
             <TeamMember 
               name="Anjali Thakur"
-              role="Lead Data Scientist"
               email="sarojni46k@gmail.com"
               linkedin="https://linkedin.com/in/anjalithakur"
               imageUrl="/lovable-uploads/286a6d41-e84d-41f6-94cb-a8f42f706b87.png"

@@ -7,7 +7,6 @@ import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 interface TeamMemberProps {
   name: string;
-  role: string;
   email: string;
   linkedin: string;
   imageUrl: string;
@@ -15,7 +14,6 @@ interface TeamMemberProps {
 
 const TeamMember: React.FC<TeamMemberProps> = ({ 
   name, 
-  role, 
   email, 
   linkedin, 
   imageUrl 
@@ -39,10 +37,9 @@ const TeamMember: React.FC<TeamMemberProps> = ({
         </AspectRatio>
       </div>
       
-      <h3 className="text-xl font-bold font-['Space_Grotesk']">{name}</h3>
-      <p className="text-white/60 mb-3 text-center">{role}</p>
+      <h3 className="text-xl font-bold mb-4 font-['Space_Grotesk'] text-center">{name}</h3>
       
-      <div className="mt-4 flex flex-col gap-3 w-full">
+      <div className="flex flex-col gap-3 w-full">
         <a 
           href={`mailto:${email}`} 
           className="flex items-center gap-2 text-white/80 hover:text-truthabra-blue transition-colors duration-200"
