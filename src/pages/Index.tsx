@@ -189,34 +189,34 @@ const Index: React.FC = () => {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             <TeamMember 
-              name="Alex Johnson"
+              name="Hemant Singh Dagur"
               role="CEO & Co-founder"
-              email="alex@truthabra.com"
-              linkedin="https://linkedin.com/in/alexjohnson"
+              email="hemantdagur39@gmail.com"
+              linkedin="https://linkedin.com/in/hemantsinghdagur"
               imageUrl="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80"
             />
             
             <TeamMember 
-              name="Sarah Chen"
+              name="Ashmi Singh"
               role="CTO & Co-founder"
-              email="sarah@truthabra.com"
-              linkedin="https://linkedin.com/in/sarahchen"
+              email="ashmivats@gmail.com"
+              linkedin="https://linkedin.com/in/ashmisingh"
               imageUrl="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80"
             />
             
             <TeamMember 
-              name="Marcus Williams"
+              name="Prerit Tapa"
               role="Head of Research"
-              email="marcus@truthabra.com"
-              linkedin="https://linkedin.com/in/marcuswilliams"
+              email="tapaprerit43@gmail.com"
+              linkedin="https://linkedin.com/in/prerittapa"
               imageUrl="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80"
             />
             
             <TeamMember 
-              name="Priya Patel"
+              name="Anjali Thakur"
               role="Lead Data Scientist"
-              email="priya@truthabra.com"
-              linkedin="https://linkedin.com/in/priyapatel"
+              email="sarojni46k@gmail.com"
+              linkedin="https://linkedin.com/in/anjalithakur"
               imageUrl="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80"
             />
           </div>
